@@ -55,14 +55,12 @@ li {
     display: none;
     height: 0;
    }
-    a{
+   .right a{
     display: none;
     height: 0;
    }
   .right{
     grid-column: 4/5;
-    
-
    }
 
 
@@ -70,7 +68,7 @@ li {
 
 
 @media (min-width: 990px){
-     .menu{
+    .right .menu{
         display: none;
     }
 }

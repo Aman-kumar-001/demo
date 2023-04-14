@@ -4,7 +4,7 @@ import {GiHamburgerMenu } from "react-icons/gi";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const [ShowMediaIcons, setShowMediaIcons] = useState(false);
+    // const [ShowMediaIcons, setShowMediaIcons] = useState(false);
   return (
      <nav className='main-container'>
         <div className='logo'>
@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className='right'>
          <a href='#' ><FaSignInAlt />Login</a>
 
-        <div className='menu' onClick={() => setShowMediaIcons(!ShowMediaIcons)}>
+        <div className='menu' >
           <GiHamburgerMenu />
          </div>
         </div>
