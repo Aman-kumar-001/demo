@@ -13,7 +13,7 @@ const Navbar = () => {
                 <span>S</span>harma
             </h2>
         </div>
-        <div className={ShowMediaIcons ? "menu-link mobile-menu-link" : "middle"} >
+        <div className= "middle">
             <ul>
                 <li>
                     <a href=''>Home</a>
