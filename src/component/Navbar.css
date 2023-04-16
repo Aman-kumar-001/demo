@@ -63,18 +63,44 @@ li {
   .right{
     grid-column: 4/5;
    }
-   .mobile-menu ul li{
-    display: grid;
-    grid-column: 3/5;
-    grid-row: 1/2;
-    justify-content: end;
+ .mobile-menu{
+    position: absolute;
+    width: 20%;
+    right: 29px;
+    top: 11vh;
+    height: 28vh;
+    z-index: 1;
+   display: flex;
+    background-color: rgb(165, 156, 156);
+   
+}
+/* .right-upper svg{
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+} */
+.mobile-menu,ul{
+    justify-content: center;
     align-items: center;
-    z-index: 99;
-    position: relative;
-   }
+    
+}
+li, a{
+   
+    color:black;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: block;
+    font-size: 20px;
+}
+
 
 
 }
+
 
 
 @media (min-width: 990px){

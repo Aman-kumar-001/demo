@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./banner.css";
 import Mycard from "../Banner/image-item/mycard";
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai";
@@ -6,19 +6,35 @@ import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai";
 
 
 function banner() {
-    let box = document.querySelector('.product-container'); 
-    const prebtn = () => {
-      let width= box.clientWidth;
-      box.scrollLeft = box.scrollLeft - width;
-    } 
+  
+           
+  const Carousel = ({ items, itemsPerSlide = 1 }) => {
+    const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  
     const nextbtn = () => {
-        let width= box.clientWidth;
-        box.scrollLeft = box.scrollLeft + width;
-    } 
+      setCurrentItemIndex(
+        (currentItemIndex + itemsPerSlide) % (items.length - itemsPerSlide + 1)
+      );
+    };
+  
+    const prebtn = () => {
+      setCurrentItemIndex(
+        currentItemIndex === 0
+          ? items.length - itemsPerSlide
+          : currentItemIndex - itemsPerSlide
+      );
+    };
+  
+    const visibleItems = items.slice(
+      currentItemIndex,
+      currentItemIndex + itemsPerSlide
+    );
+  }
+    
       return (
     <div className='product-carousel'>
-        <button className='pre-btn' onClick={prebtn}><p><AiOutlineArrowLeft /></p></button>
-        <button className='next-btn' onClick={nextbtn}><p><AiOutlineArrowRight/></p></button>
+        <button className='pre-btn' ><p><AiOutlineArrowLeft /></p></button>
+        <button className='next-btn' ><p><AiOutlineArrowRight/></p></button>
 
         <div className='product-container'>
             < Mycard cardno= '1'/>
